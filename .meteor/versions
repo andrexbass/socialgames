@@ -24,6 +24,7 @@ ecmascript-runtime@0.3.15
 ejson@1.0.13
 es5-shim@4.6.15
 fastclick@1.0.13
+fourseven:scss@3.10.1
 geojson-utils@1.0.10
 hot-code-push@1.0.4
 html-tools@1.0.11
@@ -35,6 +36,7 @@ jquery@1.11.10
 launch-screen@1.0.12
 livedata@1.0.18
 logging@1.1.16
+materialize:materialize@0.97.8
 meteor@1.6.0
 meteor-base@1.0.4
 minifier-css@1.2.15
@@ -49,6 +51,7 @@ mongo-id@1.0.6
 npm-mongo@2.2.11_2
 observe-sequence@1.0.14
 ordered-dict@1.0.9
+poetic:materialize-scss@1.97.6_1
 promise@0.8.8
 random@1.0.10
 reactive-var@1.0.11
