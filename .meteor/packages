@@ -23,3 +23,5 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 fourseven:scss
 materialize:materialize
 poetic:materialize-scss
+keepnox:perfect-scrollbar
+mfpierre:chartist-js
