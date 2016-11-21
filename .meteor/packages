@@ -28,3 +28,4 @@ mfpierre:chartist-js
 iron:router
 accounts-ui
 accounts-facebook
+accounts-password@1.2.12
