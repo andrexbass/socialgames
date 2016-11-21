@@ -25,3 +25,4 @@ materialize:materialize
 poetic:materialize-scss
 keepnox:perfect-scrollbar
 mfpierre:chartist-js
+iron:router
