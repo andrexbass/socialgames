@@ -26,3 +26,5 @@ poetic:materialize-scss
 keepnox:perfect-scrollbar
 mfpierre:chartist-js
 iron:router
+accounts-ui
+accounts-facebook
