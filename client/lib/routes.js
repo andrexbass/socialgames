@@ -10,6 +10,11 @@ Router.map(function(){
     path: '/'
   });
 
+  this.route('login', {
+    path: '/login',
+    layoutTemplate: ''
+  });
+
   this.route('submenu', {
     path: '/sub/menu'
   });
