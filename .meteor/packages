@@ -24,3 +24,5 @@ less
 iron:router
 tap:i18n
 zimme:iron-router-active
+accounts-ui
+accounts-facebook
