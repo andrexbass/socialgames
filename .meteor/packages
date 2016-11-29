@@ -26,3 +26,6 @@ tap:i18n
 zimme:iron-router-active
 accounts-ui
 accounts-facebook
+accounts-password
+aldeed:template-extension
+useraccounts:bootstrap
