@@ -1,5 +1,6 @@
 # socialgames
 boardgames plataform
 
-#INSTALL
+## install
 meteor npm install --save bcrypt
+meteor
