@@ -1,39 +1,60 @@
 <template name="sidebar">
-      <aside class="aside">
-         <!-- START Sidebar (left)-->
-         <div class="aside-inner">
+    <aside class="aside">
+        <!-- START Sidebar (left)-->
+        <div class="aside-inner">
             <nav class="sidebar">
-               <!-- START sidebar nav-->
-               <ul class="nav">
-                  <!-- Iterates over all sidebar items-->
-                  <li class="nav-heading ">
-                     <span>{{_"sidebar.heading.HEADER"}}</span>
-                  </li>
-                  <li class="{{isActiveRoute regex='singleview'}}">
-                     <a href="{{ pathFor 'singleview' }}" title="Single View">
-                        <em class="fa fa-file-o"></em>
-                        <span>{{_ "sidebar.nav.SINGLEVIEW" }}</span>
-                     </a>
-                  </li>
-                  <li class="{{isActivePath regex='sub'}}">
-                     <a href="#menuid" title="Menu" data-toggle="collapse">
-                        <em class="icon-folder"></em>
-                        <span>{{_"sidebar.nav.menu.MENU"}}</span>
-                     </a>
-                     <ul id="menuid" class="nav sidebar-subnav {{isNotActivePath regex='sub' className='collapse'}}">
-                        <li class="sidebar-subnav-header">Menu</li>
-                        <li class="{{isActiveRoute regex='menu'}}">
-                           <a href="{{ pathFor 'submenu' }}" title="Sub Menu">
-                              <em></em>
-                              <span>{{_"sidebar.nav.menu.SUBMENU"}}</span>
-                           </a>
-                        </li>
-                     </ul>
-                  </li>
-               </ul>
-               <!-- END sidebar nav-->
+                <!-- START sidebar nav-->
+                <ul class="nav">
+                    <!-- Iterates over all sidebar items-->
+                    <li class="nav-heading ">
+                        <span>{{_"sidebar.heading.HEADER"}}</span>
+                    </li>
+                    <li class="{{isActiveRoute regex='singleview'}}">
+                        <a href="{{ pathFor 'singleview' }}" title="Single View">
+                            <em class="fa fa-file-o"></em>
+                            <span>{{_ "sidebar.nav.SINGLEVIEW" }}</span>
+                        </a>
+                    </li>
+                    <li class="{{isActiveRoute regex='friends'}}">
+                        <a href="{{ pathFor 'friends' }}" title="{{_ 'sidebar.nav.FRIENDS' }}">
+                            <em class="fa fa-file-o"></em>
+                            <span>{{_ "sidebar.nav.FRIENDS" }}</span>
+                        </a>
+                    </li>
+                    <li class="{{isActiveRoute regex='games'}}">
+                        <a href="{{ pathFor 'games' }}" title="{{_ 'sidebar.nav.GAMES' }}">
+                            <em class="fa fa-file-o"></em>
+                            <span>{{_ "sidebar.nav.GAMES" }}</span>
+                        </a>
+                    </li>
+                    <li class="{{isActiveRoute regex='logs'}}">
+                        <a href="{{ pathFor 'logs' }}" title="{{_ 'sidebar.nav.LOGS' }}">
+                            <em class="fa fa-file-o"></em>
+                            <span>{{_ "sidebar.nav.LOGS" }}</span>
+                        </a>
+                    </li>
+                    <li class="{{isActiveRoute regex='matches'}}">
+                        <a href="{{ pathFor 'matches' }}" title="{{_ 'sidebar.nav.MATCHES' }}">
+                            <em class="fa fa-file-o"></em>
+                            <span>{{_ "sidebar.nav.MATCHES" }}</span>
+                        </a>
+                    </li>
+                    <li class="{{isActiveRoute regex='places'}}">
+                        <a href="{{ pathFor 'places' }}" title="{{_ 'sidebar.nav.PLACES' }}">
+                            <em class="fa fa-file-o"></em>
+                            <span>{{_ "sidebar.nav.PLACES" }}</span>
+                        </a>
+                    </li>
+                    <li class="{{isActiveRoute regex='rankings'}}">
+                        <a href="{{ pathFor 'rankings' }}" title="{{_ 'sidebar.nav.RANKINGS' }}">
+                            <em class="fa fa-file-o"></em>
+                            <span>{{_ "sidebar.nav.RANKINGS" }}</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- END sidebar nav-->
             </nav>
-         </div>
-         <!-- END Sidebar (left)-->
-      </aside>
+        </div>
+        <!-- END Sidebar (left)-->
+    </aside>
 </template>

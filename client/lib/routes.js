@@ -1,23 +1,45 @@
 
 Router.configure({
-  layoutTemplate: 'layout', 
-  loadingTemplate: 'loading'
+    layoutTemplate: 'layout',
+    loadingTemplate: 'loading'
 });
 
 Router.map(function(){
 
-  this.route('singleview', {
+    this.route('singleview', {
     path: '/'
-  });
+    });
 
-  this.route('login', {
+    this.route('login', {
     path: '/login',
     layoutTemplate: ''
-  });
+    });
 
-  this.route('submenu', {
+    this.route('submenu', {
     path: '/sub/menu'
-  });
+    });
 
+    this.route('friends', {
+        path: '/friends'
+    });
 
+    this.route('games', {
+        path: '/games'
+    });
+
+    this.route('logs', {
+    path: '/logs'
+    });
+
+    this.route('matches', {
+    path: '/matches'
+    });
+
+    this.route('places', {
+        path: '/places'
+    });
+
+    this.route('rankings', {
+        path: '/rankings'
+    });
 });
