@@ -1,0 +1,27 @@
+{
+  "dashboard": {
+    "WELCOME": "Bem-vindo ao Social Games!",
+    "ENGLISH": "Inglês",
+    "PORTUGUESE": "Português"
+  },
+  "topbar": {
+    "search": {
+      "PLACEHOLDER": "Digite e pressione enter..."
+    }
+  },
+  "sidebar": {
+    "WELCOME": "Bem-vindo",
+    "heading": {
+      "HEADER": "Menu"
+    },
+    "nav": {
+      "SINGLEVIEW": "Início",
+      "FRIENDS": "Amigos",
+      "GAMES": "Jogos",
+      "LOGS": "Logs",
+      "MATCHES": "Partidas",
+      "PLACES": "Locais",
+      "RANKINGS": "Rankings"
+    }
+  }
+}

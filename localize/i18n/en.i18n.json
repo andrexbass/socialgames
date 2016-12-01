@@ -1,6 +1,8 @@
 {
   "dashboard": {
-    "WELCOME": "Welcome to Angle !"
+    "WELCOME": "Welcome to Angle !",
+    "ENGLISH": "English",
+    "PORTUGUESE": "Portuguese"
   },
   "topbar": {
     "search": {
@@ -14,10 +16,12 @@
     },
     "nav": {
       "SINGLEVIEW": "Single View",
-      "menu": {
-        "MENU": "Menu",
-        "SUBMENU": "Sub Menu"
-      }
+      "FRIENDS": "Friends",
+      "GAMES": "Games",
+      "LOGS": "Logs",
+      "MATCHES": "Matches",
+      "PLACES": "Places",
+      "RANKINGS": "Rankings"
     }
   }
 }
