@@ -1,0 +1,142 @@
+.topnavbar {
+   background-color: #FCB446;
+   background-image: none;
+}
+
+.aside .sidebar > .nav > li.timeline.active,
+.aside .sidebar > .nav > li.timeline.open,
+.aside .sidebar > .nav > li.timeline.active .nav,
+.aside .sidebar > .nav > li.timeline.open .nav,
+.aside .sidebar > .nav > li.timeline > a:hover,
+.aside .sidebar > .nav > li.timeline.active > a,
+.aside .sidebar > .nav > li.timeline.active > a > em,
+.aside .sidebar > .nav > li.timeline.open > a,
+.aside .sidebar > .nav > li.timeline.open > a > em {
+    color: #420B0B;
+}
+.aside .sidebar > .nav > li.timeline.active {
+    border-left-color: #420B0B;
+}
+.aside .sidebar > .nav > li.timeline.active,
+.aside .sidebar > .nav > li.timeline.open,
+.aside .sidebar > .nav > li.timeline.active > a,
+.sidebar > .nav > li.timeline.open > a,
+.aside .sidebar > .nav > li.timeline.active .nav,
+.aside .sidebar > .nav > li.timeline.open .nav {
+    background-color: #FFF1F1;
+}
+
+.aside .sidebar > .nav > li.friends.active,
+.aside .sidebar > .nav > li.friends.open,
+.aside .sidebar > .nav > li.friends.active .nav,
+.aside .sidebar > .nav > li.friends.open .nav,
+.aside .sidebar > .nav > li.friends > a:hover,
+.aside .sidebar > .nav > li.friends.active > a,
+.aside .sidebar > .nav > li.friends.active > a > em,
+.aside .sidebar > .nav > li.friends.open > a,
+.aside .sidebar > .nav > li.friends.open > a > em {
+    color: #6900FF;
+}
+.aside .sidebar > .nav > li.friends.active {
+    border-left-color: #6900FF;
+}
+.aside .sidebar > .nav > li.friends.active,
+.aside .sidebar > .nav > li.friends.open,
+.aside .sidebar > .nav > li.friends.active > a,
+.sidebar > .nav > li.friends.open > a,
+.aside .sidebar > .nav > li.friends.active .nav,
+.aside .sidebar > .nav > li.friends.open .nav {
+    background-color: #FAFAFF;
+}
+
+.aside .sidebar > .nav > li.games.active,
+.aside .sidebar > .nav > li.games.open,
+.aside .sidebar > .nav > li.games.active .nav,
+.aside .sidebar > .nav > li.games.open .nav,
+.aside .sidebar > .nav > li.games > a:hover,
+.aside .sidebar > .nav > li.games.active > a,
+.aside .sidebar > .nav > li.games.active > a > em,
+.aside .sidebar > .nav > li.games.open > a,
+.aside .sidebar > .nav > li.games.open > a > em {
+    color: #FF00FF;
+}
+.aside .sidebar > .nav > li.games.active {
+    border-left-color: #FF00FF;
+}
+.aside .sidebar > .nav > li.games.active,
+.aside .sidebar > .nav > li.games.open,
+.aside .sidebar > .nav > li.games.active > a,
+.sidebar > .nav > li.games.open > a,
+.aside .sidebar > .nav > li.games.active .nav,
+.aside .sidebar > .nav > li.games.open .nav {
+    background-color: #FFEEFF;
+}
+
+.aside .sidebar > .nav > li.matches.active,
+.aside .sidebar > .nav > li.matches.open,
+.aside .sidebar > .nav > li.matches.active .nav,
+.aside .sidebar > .nav > li.matches.open .nav,
+.aside .sidebar > .nav > li.matches > a:hover,
+.aside .sidebar > .nav > li.matches.active > a,
+.aside .sidebar > .nav > li.matches.active > a > em,
+.aside .sidebar > .nav > li.matches.open > a,
+.aside .sidebar > .nav > li.matches.open > a > em {
+    color: #00691F;
+}
+.aside .sidebar > .nav > li.matches.active {
+    border-left-color: #00691F;
+}
+.aside .sidebar > .nav > li.matches.active,
+.aside .sidebar > .nav > li.matches.open,
+.aside .sidebar > .nav > li.matches.active > a,
+.sidebar > .nav > li.matches.open > a,
+.aside .sidebar > .nav > li.matches.active .nav,
+.aside .sidebar > .nav > li.matches.open .nav {
+    background-color: #F6FFF7;
+}
+
+.aside .sidebar > .nav > li.places.active,
+.aside .sidebar > .nav > li.places.open,
+.aside .sidebar > .nav > li.places.active .nav,
+.aside .sidebar > .nav > li.places.open .nav,
+.aside .sidebar > .nav > li.places > a:hover,
+.aside .sidebar > .nav > li.places.active > a,
+.aside .sidebar > .nav > li.places.active > a > em,
+.aside .sidebar > .nav > li.places.open > a,
+.aside .sidebar > .nav > li.places.open > a > em {
+    color: #FF0000;
+}
+.aside .sidebar > .nav > li.places.active {
+    border-left-color: #FF0000;
+}
+.aside .sidebar > .nav > li.places.active,
+.aside .sidebar > .nav > li.places.open,
+.aside .sidebar > .nav > li.places.active > a,
+.sidebar > .nav > li.places.open > a,
+.aside .sidebar > .nav > li.places.active .nav,
+.aside .sidebar > .nav > li.places.open .nav {
+    background-color: #FFF2F1;
+}
+
+.aside .sidebar > .nav > li.rankings.active,
+.aside .sidebar > .nav > li.rankings.open,
+.aside .sidebar > .nav > li.rankings.active .nav,
+.aside .sidebar > .nav > li.rankings.open .nav,
+.aside .sidebar > .nav > li.rankings > a:hover,
+.aside .sidebar > .nav > li.rankings.active > a,
+.aside .sidebar > .nav > li.rankings.active > a > em,
+.aside .sidebar > .nav > li.rankings.open > a,
+.aside .sidebar > .nav > li.rankings.open > a > em {
+    color: #FFBF00;
+}
+.aside .sidebar > .nav > li.rankings.active {
+    border-left-color: #FFBF00;
+}
+.aside .sidebar > .nav > li.rankings.active,
+.aside .sidebar > .nav > li.rankings.open,
+.aside .sidebar > .nav > li.rankings.active > a,
+.sidebar > .nav > li.rankings.open > a,
+.aside .sidebar > .nav > li.rankings.active .nav,
+.aside .sidebar > .nav > li.rankings.open .nav {
+    background-color: #FFFFE1;
+}

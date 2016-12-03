@@ -18,10 +18,10 @@
       "SINGLEVIEW": "Início",
       "FRIENDS": "Amigos",
       "GAMES": "Jogos",
-      "LOGS": "Logs",
       "MATCHES": "Partidas",
       "PLACES": "Locais",
-      "RANKINGS": "Rankings"
+      "RANKINGS": "Rankings",
+      "TIMELINE": "Timeline"
     }
   }
 }
