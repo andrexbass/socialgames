@@ -28,45 +28,45 @@
                         {{/with}}
                     </li>
                     {{/with}}
-                    <li class="{{isActiveRoute regex='singleview'}}">
-                        <a href="{{ pathFor 'singleview' }}" title="Single View">
-                            <em class="fa fa-file-o"></em>
+                    <li class="{{isActiveRoute regex='main'}} main">
+                        <a href="{{ pathFor 'main' }}" title="main">
+                            <em class="fa fa-home"></em>
                             <span>{{_ "sidebar.nav.SINGLEVIEW" }}</span>
                         </a>
                     </li>
-                    <li class="{{isActiveRoute regex='friends'}}">
+                    <li class="{{isActiveRoute regex='timeline'}} timeline">
+                        <a href="{{ pathFor 'timeline' }}" title="{{_ 'sidebar.nav.TIMELINE' }}">
+                            <em class="fa fa-tasks"></em>
+                            <span>{{_ "sidebar.nav.TIMELINE" }}</span>
+                        </a>
+                    </li>
+                    <li class="{{isActiveRoute regex='friends'}} friends">
                         <a href="{{ pathFor 'friends' }}" title="{{_ 'sidebar.nav.FRIENDS' }}">
-                            <em class="fa fa-file-o"></em>
+                            <em class="fa fa-users"></em>
                             <span>{{_ "sidebar.nav.FRIENDS" }}</span>
                         </a>
                     </li>
-                    <li class="{{isActiveRoute regex='games'}}">
+                    <li class="{{isActiveRoute regex='games'}} games">
                         <a href="{{ pathFor 'games' }}" title="{{_ 'sidebar.nav.GAMES' }}">
-                            <em class="fa fa-file-o"></em>
+                            <em class="fa fa-cubes"></em>
                             <span>{{_ "sidebar.nav.GAMES" }}</span>
                         </a>
                     </li>
-                    <li class="{{isActiveRoute regex='logs'}}">
-                        <a href="{{ pathFor 'logs' }}" title="{{_ 'sidebar.nav.LOGS' }}">
-                            <em class="fa fa-file-o"></em>
-                            <span>{{_ "sidebar.nav.LOGS" }}</span>
-                        </a>
-                    </li>
-                    <li class="{{isActiveRoute regex='matches'}}">
+                    <li class="{{isActiveRoute regex='matches'}} matches">
                         <a href="{{ pathFor 'matches' }}" title="{{_ 'sidebar.nav.MATCHES' }}">
-                            <em class="fa fa-file-o"></em>
+                            <em class="fa fa-institution"></em>
                             <span>{{_ "sidebar.nav.MATCHES" }}</span>
                         </a>
                     </li>
-                    <li class="{{isActiveRoute regex='places'}}">
+                    <li class="{{isActiveRoute regex='places'}} places">
                         <a href="{{ pathFor 'places' }}" title="{{_ 'sidebar.nav.PLACES' }}">
-                            <em class="fa fa-file-o"></em>
+                            <em class="fa fa-map-marker"></em>
                             <span>{{_ "sidebar.nav.PLACES" }}</span>
                         </a>
                     </li>
-                    <li class="{{isActiveRoute regex='rankings'}}">
+                    <li class="{{isActiveRoute regex='rankings'}} rankings">
                         <a href="{{ pathFor 'rankings' }}" title="{{_ 'sidebar.nav.RANKINGS' }}">
-                            <em class="fa fa-file-o"></em>
+                            <em class="fa fa-trophy"></em>
                             <span>{{_ "sidebar.nav.RANKINGS" }}</span>
                         </a>
                     </li>

@@ -41,10 +41,6 @@ Router.map(function(){
         path: '/games'
     });
 
-    this.route('logs', {
-    path: '/logs'
-    });
-
     this.route('matches', {
     path: '/matches'
     });
@@ -55,5 +51,9 @@ Router.map(function(){
 
     this.route('rankings', {
         path: '/rankings'
+    });
+
+    this.route('timeline', {
+        path: '/timeline'
     });
 });
