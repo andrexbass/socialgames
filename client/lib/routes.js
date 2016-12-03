@@ -1,9 +1,17 @@
-
+// Configure routes
 Router.configure({
     layoutTemplate: 'layout',
     loadingTemplate: 'loading'
 });
 
+// Autenticate routes
+Router.plugin('auth', {
+  except: [
+    'login'
+  ]
+});
+
+// Maping of routes
 Router.map(function(){
 
     this.route('singleview', {

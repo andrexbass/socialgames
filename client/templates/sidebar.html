@@ -5,9 +5,23 @@
             <nav class="sidebar">
                 <!-- START sidebar nav-->
                 <ul class="nav">
-                    <!-- Iterates over all sidebar items-->
-                    <li class="nav-heading ">
-                        <span>{{_"sidebar.heading.HEADER"}}</span>
+                    <li class="collapse in">
+                         <!-- User picture-->
+                        <div class="user-block-picture" style="padding: 20px">
+                            <div class="user-block-status">
+                                <img src="img/user/02.jpg" alt="Avatar" class="img-thumbnail img-circle" width="60" height="60">
+                                <div class="circle circle-success circle-lg"></div>
+                            </div>
+                            <div class="user-block-info">
+                                <span class="user-block-name">
+                                    {{#with currentUser}}
+                                        {{#with profile}}
+                                            {{name}}
+                                        {{/with}}
+                                    {{/with}}
+                                </span>
+                            </div>
+                        </div>
                     </li>
                     <li class="{{isActiveRoute regex='singleview'}}">
                         <a href="{{ pathFor 'singleview' }}" title="Single View">

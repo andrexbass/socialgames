@@ -30,3 +30,4 @@ accounts-password
 aldeed:template-extension
 useraccounts:bootstrap
 pcel:serialize
+zimme:iron-router-auth
