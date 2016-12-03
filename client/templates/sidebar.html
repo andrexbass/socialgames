@@ -5,6 +5,7 @@
             <nav class="sidebar">
                 <!-- START sidebar nav-->
                 <ul class="nav">
+                    {{#with currentUser}}
                     <li class="collapse in">
                          <!-- User picture-->
                         <div class="user-block-picture" style="padding: 20px">
@@ -14,15 +15,19 @@
                             </div>
                             <div class="user-block-info">
                                 <span class="user-block-name">
-                                    {{#with currentUser}}
-                                        {{#with profile}}
-                                            {{name}}
-                                        {{/with}}
+                                    {{#with profile}}
+                                        {{name}}
                                     {{/with}}
                                 </span>
                             </div>
+                            <div>
+                                <a href="{{ pathFor 'logoff' }}">
+                                    <span>Logoff</span>
+                                </a>
+                            </div>
                         </div>
                     </li>
+                    {{/with}}
                     <li class="{{isActiveRoute regex='singleview'}}">
                         <a href="{{ pathFor 'singleview' }}" title="Single View">
                             <em class="fa fa-file-o"></em>

@@ -19,12 +19,16 @@ Router.map(function(){
     });
 
     this.route('login', {
-    path: '/login',
-    layoutTemplate: ''
+        path: '/login',
+        layoutTemplate: ''
+    });
+
+    this.route('logoff', function() {
+        Meteor.logout();
     });
 
     this.route('submenu', {
-    path: '/sub/menu'
+        path: '/sub/menu'
     });
 
     this.route('friends', {
