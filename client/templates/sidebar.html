@@ -7,17 +7,16 @@
                 <ul class="nav">
                     {{#with currentUser}}
                     <li class="collapse in">
+                        {{#with profile}}
                          <!-- User picture-->
                         <div class="user-block-picture" style="padding: 20px">
                             <div class="user-block-status">
-                                <img src="img/user/02.jpg" alt="Avatar" class="img-thumbnail img-circle" width="60" height="60">
+                                <img src={{ userPicHelper }} alt="Avatar" class="img-thumbnail img-circle" width="60" height="60">
                                 <div class="circle circle-success circle-lg"></div>
                             </div>
                             <div class="user-block-info">
                                 <span class="user-block-name">
-                                    {{#with profile}}
-                                        {{name}}
-                                    {{/with}}
+                                    {{name}}
                                 </span>
                             </div>
                             <div>
@@ -26,6 +25,7 @@
                                 </a>
                             </div>
                         </div>
+                        {{/with}}
                     </li>
                     {{/with}}
                     <li class="{{isActiveRoute regex='singleview'}}">
