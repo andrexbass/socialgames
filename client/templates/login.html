@@ -4,16 +4,9 @@
          <!-- START panel-->
          {{> atForm}}
          <!-- END panel-->
-         <div class="p-lg text-center">
-            <span>&copy;</span>
-            <span>2016</span>
-            <span>-</span>
-            <span>Social Games</span>
-         </div>
+         {{#if currentUser }}
+              Você está logado!
+         {{/if}}
       </div>
    </div> 
-</template>
-
-<template name="foo">
-  <button type="button">Click 1</button>
 </template>

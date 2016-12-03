@@ -1,3 +1,5 @@
+import { Meteor } from 'meteor/meteor';
+
 // Configure routes
 Router.configure({
     layoutTemplate: 'layout',
@@ -6,25 +8,25 @@ Router.configure({
 
 // Autenticate routes
 Router.plugin('auth', {
-  except: [
-    'login'
-  ]
+    except: [
+        'login'
+    ]
 });
 
 // Maping of routes
 Router.map(function(){
 
-    this.route('singleview', {
-    path: '/'
+    this.route('main', {
+        path: '/'
     });
 
     this.route('login', {
-        path: '/login',
-        layoutTemplate: ''
+        path: '/login'
     });
 
     this.route('logoff', function() {
         Meteor.logout();
+        Router.go('login');    
     });
 
     this.route('submenu', {

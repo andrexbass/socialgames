@@ -3,20 +3,20 @@
 
 
 // Running code only when the template has been created, BUT NOT RENDERED YET!!
-Template.singleview.created = function(){
+Template.main.created = function(){
 
   // Code for the singleview template
 };
 
 // Running code only when the template has been fully rendered
-Template.singleview.rendered = function(){
+Template.main.rendered = function(){
 
   // Code for the singleview template
 
 };
 
 // Adding events per template
-Template.singleview.events({
+Template.main.events({
 
     'click .customevent' : function(event, template){
 
