@@ -2,10 +2,19 @@
 ##
 boardgames plataform
 
-## install
+## Install
 
 meteor npm install
 
 meteor npm install --save bcrypt
 
 meteor
+
+## Requirements
+
+Meteor 1.4
+
+Node +6.9
+
+Npm +4.0
+
