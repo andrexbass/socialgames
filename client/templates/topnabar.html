@@ -33,11 +33,11 @@
                <!-- START Right Navbar-->
                <ul class="nav navbar-nav navbar-right">
                   <!-- Search icon-->
-                  <li>
+                  <!-- <li>
                      <a href="#" data-search-open="">
                         <em class="icon-magnifier"></em>
                      </a>
-                  </li>
+                  </li> -->
                   <!-- START Offsidebar button-->
                   <!-- <li>
                      <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
@@ -45,6 +45,13 @@
                      </a>
                   </li> -->
                   <!-- END Offsidebar menu-->
+                  {{#unless currentUser }}
+                       <li>
+                           <a href="/login">
+                              Login
+                           </a>
+                        </li>
+                  {{/unless}}
                </ul>
                <!-- END Right Navbar-->
             </div>
