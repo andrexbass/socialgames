@@ -9,7 +9,8 @@ Router.configure({
 // Autenticate routes
 Router.plugin('auth', {
     except: [
-        'login'
+        'login',
+        'main'
     ]
 });
 

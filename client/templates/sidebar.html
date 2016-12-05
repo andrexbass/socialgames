@@ -33,7 +33,6 @@
                             </div>
                         </div>
                     </li>
-                    {{/with}}
                     <li class="{{isActiveRoute regex='main'}} main">
                         <a href="{{ pathFor 'main' }}" title="main">
                             <em class="fa fa-home"></em>
@@ -76,6 +75,7 @@
                             <span>{{_ "sidebar.nav.RANKINGS" }}</span>
                         </a>
                     </li>
+                    {{/with}}
                 </ul>
                 <!-- END sidebar nav-->
             </nav>

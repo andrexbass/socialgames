@@ -18,9 +18,4 @@ Template.main.rendered = function(){
 // Adding events per template
 Template.main.events({
 
-    'click .customevent' : function(event, template){
-
-      $(event.target).replaceWith('<strong>Hello from custom event!</strong>');
-
-    }
 });
