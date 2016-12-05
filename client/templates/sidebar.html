@@ -4,35 +4,9 @@
         <div class="aside-inner">
             <nav class="sidebar">
                 <!-- START sidebar nav-->
+                <br/>
                 <ul class="nav">
                     {{#with currentUser}}
-                    <li class="collapse in">
-
-                        <!-- User picture-->
-                        <div class="user-block-picture" style="padding: 20px">
-                            <div class="user-block-status">
-                                <img src={{ userPicHelper }} alt="Avatar" class="img-thumbnail img-circle" width="60" height="60">
-                                <div class="circle circle-success circle-lg"></div>
-                            </div>
-                            {{#with profile}}
-                            <div class="user-block-info">
-                                <span class="user-block-name">
-                                    {{name}}
-                                </span>
-                            </div>
-                            {{/with}}
-                            <div class="user-block-info">
-                                <span class="user-block-name">
-                                    {{email}}
-                                </span>
-                            </div>
-                            <div>
-                                <a href="{{ pathFor 'logoff' }}">
-                                    <span>Logoff</span>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
                     <li class="{{isActiveRoute regex='main'}} main">
                         <a href="{{ pathFor 'main' }}" title="main">
                             <em class="fa fa-home"></em>

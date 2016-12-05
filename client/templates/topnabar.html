@@ -6,10 +6,10 @@
             <div class="navbar-header">
                <a href="#/" class="navbar-brand">
                   <div class="brand-logo">
-                     <img src="/img/socialGames.png" alt="App Logo" class="img-responsive">
+                     <img src="/img/iconeSocialGames.png" width="50" alt="App Logo" class="img-responsive">
                   </div>
                   <div class="brand-logo-collapsed">
-                     <img src="/img/socialGames.png" alt="App Logo" class="img-responsive">
+                     <img src="/img/iconeSocialGames.png" alt="App Logo" class="img-responsive">
                   </div>
                </a>
             </div>
@@ -46,12 +46,34 @@
                   </li> -->
                   <!-- END Offsidebar menu-->
                   {{#unless currentUser }}
-                       <li>
-                           <a href="/login">
-                              Login
-                           </a>
-                        </li>
+                     <li>
+                        <a href="/login">
+                           Login
+                        </a>
+                     </li>
                   {{/unless}}
+
+                  {{#with currentUser}}
+                    <li class="collapse in">
+                        <!-- User picture-->
+                        <div class="user-block-picture" style="padding: 20px">
+                            <!--<div class="user-block-status">
+                                <img src={{ userPicHelper }} alt="Avatar" class="img-thumbnail img-circle" width="60" height="60">
+                                <div class="circle circle-success circle-lg"></div>
+                            </div>-->
+                           <div class="user-block-info">
+                           {{#with profile}}
+                              {{name}}
+                           {{/with}}
+                           {{email}}
+                           -  
+                           <a href="{{ pathFor 'logoff' }}">
+                              <span>Logoff</span>
+                           </a>
+                           </div>
+                        </div>
+                    </li>
+                  {{/with}}  
                </ul>
                <!-- END Right Navbar-->
             </div>
