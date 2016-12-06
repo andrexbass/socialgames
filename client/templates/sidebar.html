@@ -1,4 +1,5 @@
 <template name="sidebar">
+{{#with currentUser}}
     <aside class="aside">
         <!-- START Sidebar (left)-->
         <div class="aside-inner">
@@ -6,7 +7,7 @@
                 <!-- START sidebar nav-->
                 <br/>
                 <ul class="nav">
-                    {{#with currentUser}}
+                    
                     <li class="{{isActiveRoute regex='main'}} main">
                         <a href="{{ pathFor 'main' }}" title="main">
                             <em class="fa fa-home"></em>
@@ -49,11 +50,11 @@
                             <span>{{_ "sidebar.nav.RANKINGS" }}</span>
                         </a>
                     </li>
-                    {{/with}}
                 </ul>
                 <!-- END sidebar nav-->
             </nav>
         </div>
         <!-- END Sidebar (left)-->
     </aside>
+{{/with}}    
 </template>

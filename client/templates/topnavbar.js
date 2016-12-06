@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 
-Template.sidebar.helpers({
+Template.topnavbar.helpers({
     email: function() {
     	var user = Meteor.user();
     	if (user && user.emails) {

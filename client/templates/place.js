@@ -8,9 +8,7 @@ Template.places.events({
 
     	let place = $('form[name="new-place"]').serializeJSON();
 
-    	console.log(place);
-
-    	Meteor.call('place.insert', place, function (e, result) {
+    	Meteor.call('places.insert', place, function (e, result) {
     		if(result){
     			alert("Local salvo com sucesso");
     		} else {

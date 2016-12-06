@@ -1,11 +1,11 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
-const Place = new Mongo.Collection('place');
+const Places = new Mongo.Collection('places');
 
 Meteor.methods({
-	'place.insert'(place){
-		Place.insert(place);
+	'places.insert'(place){
+		Places.insert(place);
 		return true;
 	}
 });
