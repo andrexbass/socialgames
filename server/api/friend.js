@@ -1,9 +1,11 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
+const Friends = new Mongo.Collection('friends');
+
 Meteor.methods({
-	'users.list'() {
-		return "A6";
+	'friend.add'(friend) {
+		
 	}
 });
 
