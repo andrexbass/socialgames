@@ -11,5 +11,5 @@ Meteor.methods({
 
 Meteor.publish('friends.listEmails',function(){
   // you should restrict this publication to only be available to admin users
-  return Meteor.users.find({},{fields: { emails: 1 }});
+  return Meteor.users.find({},{fields: { emails: 1 , services: 1}});
 });

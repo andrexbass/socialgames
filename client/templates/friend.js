@@ -14,6 +14,10 @@ Template.friends.helpers({
 		return Meteor.users.find({}); 
 	},
   	email(){
-  		return this.emails[0].address;
+  		if (this.services.facebook) {
+  			return this.services.facebook.email;
+  		} else {
+  			return this.emails[0].address;
+  		}
   	}
 });
