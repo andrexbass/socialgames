@@ -4,11 +4,11 @@
     </h3>
     <div class="row">
        <div class="col-lg-12">
+
           <select name="amigos" multiple="" id="amigos" class="form-control m-b">
-             <option>Option 1</option>
-             <option>Option 2</option>
-             <option>Option 3</option>
-             <option>Option 4</option>
+            {{#each allUsers}}
+              <option>{{ email }}</option>
+            {{/each}}
           </select>
        </div>
     </div>
