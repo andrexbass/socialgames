@@ -8,9 +8,9 @@
           <form role="form" name="form-add-friend" class="form-horizontal">
               <div class="col-sm-8">
                 <div class="form-group">  
-                  <select name="amigo" multiple="" id="amigos" class="form-control m-b">
+                  <select name="users_id" multiple="" id="amigos" class="form-control m-b">
                     {{#each allUsers}}
-                      <option>{{ email }}</option>
+                      <option value='{{ _id }}'>{{ emailDoAmigo }}</option>
                     {{/each}}
                   </select>
               </div>
@@ -23,25 +23,26 @@
           </form>
        </div>
     </div>
-    {{ amigos }}
-    <div class="col-lg-4">
-          <!-- START widget-->
-          <div class="panel widget">
-             <div class="panel-body">
-                <div class="row row-table">
-                   <div class="col-xs-6 text-center">
-                      <img src="img/user/06.jpg" alt="Image" class="img-thumbnail img-circle img-responsive thumb96">
-                   </div>
-                   <div class="col-xs-6">
-                      <div class="pull-right"><a href="#" class="btn btn-success">Follow</a>
-                      </div>
-                      <h3 class="mt0">Sarah Pierce</h3>
-                      <p class="text-muted">150 Following / 100 Followers</p>
-                   </div>
-                </div>
-             </div>
-          </div>
-          <!-- END widget-->
-       </div> 
+    {{#each amigos}}
+      <div class="col-lg-4">
+        <!-- START widget-->
+        <div class="panel widget">
+           <div class="panel-body">
+              <div class="row row-table">
+                 <div class="col-xs-6 text-center">
+                    <img src="img/user/06.jpg" alt="Image" class="img-thumbnail img-circle img-responsive thumb96">
+                 </div>
+                 <div class="col-xs-6">
+                    <div class="pull-right"><a href="#" class="btn btn-success">Detalhes</a>
+                    </div>
+                    <h4 class="mt0">{{ nome }}</h4>
+                    <p class="text-muted">{{ email }}</p>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <!-- END widget-->
+      </div> 
+    {{/each}}
   </div>
 </template>
