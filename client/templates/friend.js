@@ -13,8 +13,9 @@ Template.friends.rendered = function(){
 };
 
 Template.friends.helpers({
-	allUsers() { 
-		return Meteor.users.find({});
+	allUsers() {
+    var usuarioLogado_id = Meteor.user()._id;
+		return Meteor.users.find({_id:{$ne: usuarioLogado_id}});
 	},
 	emailDoAmigo() {
 		if (this.services.facebook) {
@@ -24,7 +25,7 @@ Template.friends.helpers({
 		}
 	},
   amigos() {
-    return Friends.find();
+    return Friends.find({meu_id: Meteor.user()._id});
   }
 });
 
@@ -33,6 +34,10 @@ Template.friends.events({
     'click #btnAddFriend' : function(event, template){
 
     	let friends = $('form[name="form-add-friend"]').serializeJSON();
-    	Meteor.call('friends.add', friends);
+    	Meteor.call('friends.add', friends, function(e, result){
+        if (result == "friend-exist") {
+          alert("já é seu amigo");
+        }
+      });
     }
 });

@@ -24,25 +24,32 @@
        </div>
     </div>
     {{#each amigos}}
-      <div class="col-lg-4">
-        <!-- START widget-->
-        <div class="panel widget">
-           <div class="panel-body">
-              <div class="row row-table">
-                 <div class="col-xs-6 text-center">
-                    <img src="img/user/06.jpg" alt="Image" class="img-thumbnail img-circle img-responsive thumb96">
-                 </div>
-                 <div class="col-xs-6">
-                    <div class="pull-right"><a href="#" class="btn btn-success">Detalhes</a>
-                    </div>
-                    <h4 class="mt0">{{ nome }}</h4>
-                    <p class="text-muted">{{ email }}</p>
-                 </div>
-              </div>
-           </div>
-        </div>
-        <!-- END widget-->
-      </div> 
+      <div class="col-lg-3 col-md-4">
+          <div class="panel b text-center">
+             <div class="panel-body">
+                <img src="" class="img-circle thumb64">
+                <p class="h4 text-bold mb0">{{ nome }}</p>
+                <p>{{ email }}</p>
+                <button type="button" class="btn btn-success btn-oval">Ver</button>
+             </div>
+             <div class="panel-body bt">
+                <div class="row">
+                   <div class="col-xs-4 br">
+                      <em class="fa fa-facebook fa-fw text-primary"></em>
+                      <strong>+700</strong>
+                   </div>
+                   <div class="col-xs-4 br">
+                      <em class="fa fa-twitter fa-fw text-info"></em>
+                      <strong>+300</strong>
+                   </div>
+                   <div class="col-xs-4">
+                      <em class="fa fa-heart fa-fw text-danger"></em>
+                      <strong>+150</strong>
+                   </div>
+                </div>
+             </div>
+          </div>
+      </div>
     {{/each}}
   </div>
 </template>
