@@ -6,49 +6,32 @@ Template.places.events({
 
     'click #save' : function(event, template){
 
-    	let place = $('form[name="new-place"]').serializeJSON();
+        let place = $('form[name="new-place"]').serializeJSON();
 
-    	Meteor.call('places.insert', place, function (e, result) {
-    		if(result){
-    			alert("Local salvo com sucesso");
-    		} else {
-    			alert("Erro ao tentar salvar um local");
-    		}
-    	});
-
-        Meteor.call('place.find',function (e, resultList) {
-        if(e){
-                alert("Erro ao buscar os dados");
+        Meteor.call('places.insert', place, function (e, result) {
+            if(result){
+                alert("Local salvo com sucesso");
             } else {
-                console.log(JSON.stringify(resultList));
-                 Session.set("result", JSON.stringify(resultList));
-                 console.log(Session.get("result"));
+                alert("Erro ao tentar salvar um local");
+            }
+        });
+
+        Meteor.call('places.find', null, function (e, result) {
+            if(result){
+               // console.log( result);
+            } else {
+                alert("off");
             }
         });
     }
 
 });
 
-Template.places.tasks = function() {
-    return Place.find({});
-};
 
-/*
-function resultList() {
-    Meteor.call('place.find',function (e, resultList) {
-        if(e){
-                alert("Erro ao buscar os dados");
-            } else {
-                console.log(JSON.stringify(resultList));
-                 Session.set("result", JSON.stringify(resultList));
-                 console.log(Session.get("result"));
-            }
-        });
-
-    return Session.get("result");
-}*/
-/*
-Template.hello.greeting = function() {
-  return Session.get('result').foo;
-};
-*/
+Template.places.helpers({
+  lista: [
+    { name: 'This is task 1' },
+    { name: 'This is task 2' },
+    { name: 'This is task 3' },
+  ],
+});

@@ -1,29 +1,7 @@
 <template name="places">
-    <h3>{{_"sidebar.nav.PLACES"}}
-       <small>{{_"sidebar.nav.PLACES"}}</small>
-    </h3>
-    <div class="row">
-	    <div class="panel panel-default">
-	       	<div class="panel-body">
-                <form class="form-horizontal" name="new-place">
-                   <div class="form-group">
-                      <label class="col-lg-2 control-label">Local</label>
-                      <div class="col-lg-10">
-                         <input type="text" name="name" placeholder="" class="form-control">
-                      </div>
-                   </div>
-                   <div class="form-group">
-                      <div class="col-lg-offset-2 col-lg-10">
-                         <button type="button" id="save" class="btn btn-sm btn-default">Salvar</button>
-                      </div>
-                   </div>
-                </form>
-            </div>
-	    </div>
-    </div>
-    <div>
-      {{#each resultList}}
-          {{> listPlaces}}
-      {{/each}}
-    </div>
+  {{> placeForm}}
+  
+  {{#each lista}}
+      {{> placeList }}
+  {{/each}}
 </template>
