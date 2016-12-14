@@ -13,7 +13,24 @@ var options = {
 
 Meteor.methods({
     // Retorna os dados de um jogo pelo seu identificador
-    'bgg.game'(id) {
-        return HTTP.call('GET', 'http://www.boardgamegeek.com/xmlapi/boardgame/'+ id, options);
+    'bgg.game' (id) {
+        var xml = HTTP.call('GET', 'http://www.boardgamegeek.com/xmlapi/boardgame/'+ id, options);
+        obj = converteForJson(xml);
+        return obj.boardgames.boardgame[0];
+    },
+    // Retorna uma lista de jogos por meio de uma busca textual no titulo do jogo
+    'bgg.search' (busca) {
+        var xml = HTTP.call('GET', 'http://www.boardgamegeek.com/xmlapi/search?search=' + busca, options);
+        obj = converteForJson(xml);
+        return obj.boardgames;
     }
 });
+
+// Converte um schema xml para objeto json
+function converteForJson(xml) {
+    var obj = null;
+    xml2js.parseString(xml.content, function (err, result) {
+        obj = result;
+    });
+    return obj;
+}
