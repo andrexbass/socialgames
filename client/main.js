@@ -1,7 +1,5 @@
 import { Template } from 'meteor/templating';
 
-T9n.setLanguage('pt_BR');
-
 //console.log(Meteor.absoluteUrl('img/avatar-default.png'));
 
 Avatar.setOptions({

@@ -16,7 +16,7 @@ Meteor.methods({
     'bgg.game' (id) {
         var xml = HTTP.call('GET', 'http://www.boardgamegeek.com/xmlapi/boardgame/'+ id, options);
         obj = converteForJson(xml);
-        return obj.boardgames.boardgame[0];
+        return obj.boardgames.boardgame;
     },
     // Retorna uma lista de jogos por meio de uma busca textual no titulo do jogo
     'bgg.search' (busca) {
@@ -31,6 +31,7 @@ function converteForJson(xml) {
     var obj = null;
     xml2js.parseString(xml.content, {
         charkey: "text",
+        attrkey: "generic",
         explicitArray: false
     }, 
     function (err, result) {
