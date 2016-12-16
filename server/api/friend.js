@@ -51,7 +51,7 @@ function buildFriendBase(dados, usuario) {
 
 // Verifica se o amigo já existe na collection de amigos
 function isFriendExist(dados) {
-	var qtdAmigo = Friends.find({amigo_id:dados.users_id}).count();
+	var qtdAmigo = Friends.find({amigo_id:dados.users_id, meu_id: Meteor.user()._id}).count();
 	if (qtdAmigo > 0 ) {
 		return true;
 	} else {

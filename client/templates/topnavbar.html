@@ -1,67 +1,64 @@
 <template name="topnavbar">
-      <header class="topnavbar-wrapper">
-         <!-- START Top Navbar-->
-         <nav role="navigation" class="navbar topnavbar">
-            <!-- START navbar header-->
-            <div class="navbar-header">
-               <a href="#/" class="navbar-brand">
-                  <div class="brand-logo">
-                     <img src="/img/iconeSocialGames.png" width="50" alt="App Logo" class="img-responsive">
-                  </div>
-                  <div class="brand-logo-collapsed">
-                     <img src="/img/iconeSocialGames.png" alt="App Logo" class="img-responsive">
-                  </div>
-               </a>
-            </div>
-            <!-- END navbar header-->
-            <!-- START Nav wrapper-->
-            <div class="nav-wrapper">
-               <!-- START Left navbar-->
-               <ul class="nav navbar-nav">
+   <header class="topnavbar-wrapper">
+      <!-- START Top Navbar-->
+      <nav role="navigation" class="navbar topnavbar">
+         <!-- START navbar header-->
+         <div class="navbar-header">
+            <a href="#/" class="navbar-brand">
+               <div class="brand-logo">
+                  <img src="/img/iconeSocialGames.png" width="50" alt="App Logo" class="img-responsive">
+               </div>
+               <div class="brand-logo-collapsed">
+                  <img src="/img/iconeSocialGames.png" alt="App Logo" class="img-responsive">
+               </div>
+            </a>
+         </div>
+         <!-- END navbar header-->
+         <!-- START Nav wrapper-->
+         <div class="nav-wrapper">
+            <!-- START Left navbar-->
+            <ul class="nav navbar-nav">
+               <li>
+                  <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+                  <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs">
+                     <em class="fa fa-navicon"></em>
+                  </a>
+                  <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
+                  <a href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="visible-xs sidebar-toggle">
+                     <em class="fa fa-navicon"></em>
+                  </a>
+               </li>
+            </ul>
+            <!-- END Left navbar-->
+            <!-- START Right Navbar-->
+            <ul class="nav navbar-nav navbar-right">
+               <!-- Search icon-->
+               <!-- <li>
+                  <a href="#" data-search-open="">
+                     <em class="icon-magnifier"></em>
+                  </a>
+               </li> -->
+               <!-- START Offsidebar button-->
+               <!-- <li>
+                  <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
+                     <em class="icon-notebook"></em>
+                  </a>
+               </li> -->
+               <!-- END Offsidebar menu-->
+               {{#unless currentUser }}
                   <li>
-                     <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
-                     <a href="#" data-toggle-state="aside-collapsed" class="hidden-xs">
-                        <em class="fa fa-navicon"></em>
-                     </a>
-                     <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
-                     <a href="#" data-toggle-state="aside-toggled" data-no-persist="true" class="visible-xs sidebar-toggle">
-                        <em class="fa fa-navicon"></em>
+                     <a href="/login">
+                        Login
                      </a>
                   </li>
-               </ul>
-               <!-- END Left navbar-->
-               <!-- START Right Navbar-->
-               <ul class="nav navbar-nav navbar-right">
-                  <!-- Search icon-->
-                  <!-- <li>
-                     <a href="#" data-search-open="">
-                        <em class="icon-magnifier"></em>
-                     </a>
-                  </li> -->
-                  <!-- START Offsidebar button-->
-                  <!-- <li>
-                     <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
-                        <em class="icon-notebook"></em>
-                     </a>
-                  </li> -->
-                  <!-- END Offsidebar menu-->
-                  {{#unless currentUser }}
-                     <li>
-                        <a href="/login">
-                           Login
-                        </a>
-                     </li>
-                  {{/unless}}
+               {{/unless}}
 
-                  {{#with currentUser}}
-                    <li class="collapse in">
-                        <!-- User picture-->
-                        <div class="user-block-picture" style="padding: 20px">
-                            <!--<div class="user-block-status">
-                                <img src={{ userPicHelper }} alt="Avatar" class="img-thumbnail img-circle" width="60" height="60">
-                                <div class="circle circle-success circle-lg"></div>
-                            </div>-->
-                           <div class="user-block-info">
+               {{#with currentUser}}
+                 <li class="collapse in">
+                     <!-- User picture-->
+                     <div class="user-block-picture" style="padding: 20px">
+
+                        <div class="user-block-info">
                            {{#with profile}}
                               {{name}}
                            {{/with}}
@@ -70,24 +67,24 @@
                            <a href="{{ pathFor 'logoff' }}">
                               <span>Logoff</span>
                            </a>
-                           </div>
                         </div>
-                    </li>
-                  {{/with}}  
-               </ul>
-               <!-- END Right Navbar-->
+                     </div>
+                 </li>
+               {{/with}}  
+            </ul>
+            <!-- END Right Navbar-->
+         </div>
+         <!-- END Nav wrapper-->
+         <!-- START Search form-->
+         <form role="search" action="search.html" class="navbar-form">
+            <div class="form-group has-feedback">
+               <input type="text" placeholder="Type and hit enter ..." class="form-control">
+               <div data-search-dismiss="" class="fa fa-times form-control-feedback"></div>
             </div>
-            <!-- END Nav wrapper-->
-            <!-- START Search form-->
-            <form role="search" action="search.html" class="navbar-form">
-               <div class="form-group has-feedback">
-                  <input type="text" placeholder="Type and hit enter ..." class="form-control">
-                  <div data-search-dismiss="" class="fa fa-times form-control-feedback"></div>
-               </div>
-               <button type="submit" class="hidden btn btn-default">Submit</button>
-            </form>
-            <!-- END Search form-->
-         </nav>
-         <!-- END Top Navbar-->
-      </header>
+            <button type="submit" class="hidden btn btn-default">Submit</button>
+         </form>
+         <!-- END Search form-->
+      </nav>
+      <!-- END Top Navbar-->
+   </header>
 </template>
