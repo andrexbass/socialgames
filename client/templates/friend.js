@@ -7,16 +7,6 @@ Meteor.subscribe('friends.list');
 const Friends = new Mongo.Collection('friends');
 
 Template.friends.rendered = function(){
-
-    //Exemplo de consulta de dados para um jogo especifico
-    Meteor.call('bgg.game', '96913', function(e, result){
-      console.log(result);
-    });
-
-    Meteor.call('bgg.search', 'lancaster', function(e, result){
-      console.log(result);
-    });
-
     $("#amigos").select2({
     	placeholder: "digite o email do seu amigo",
     });
