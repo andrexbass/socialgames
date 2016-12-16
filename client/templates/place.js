@@ -24,7 +24,6 @@ Template.places.events({
             }
         });
     }
-
 });
 
 

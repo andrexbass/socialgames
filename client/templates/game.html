@@ -9,69 +9,82 @@
 	    	<form method="get" action="/" class="form-horizontal">
 	        	<fieldset>
 	            	<div class="form-group">
-	               		<label for="input-id-1" class="col-sm-2 control-label">Titulo do Jogo</label>
-	               		<div class="col-sm-10">
-	                  		<select name="selGame" multiple="" id="selGame" class="form-control m-b">
-		                    {{#each games}}
-		                      <option value='{{ cod }}'>{{ name }}</option>
-		                    {{/each}}
-		                  </select>
+	            		<div class="col-sm-12">
+	            			<em class="fa fa-wifi fa-2x"></em>
+	            			<p>Primeiro vamos procurar informações sobre o jogo na internet</p>
+	            		</div>	
+	               		<label for="input-id-1" class="col-sm-2 control-label">Procurar por</label>
+	               		<div class="col-sm-6">
+	                  		<input id="search" class="form-control" type="text">
 	               		</div>
+	               		<div class="col-sm-4">
+			              <div class="form-group">
+			                  <button type="button" id="btnSearchGame" class="btn btn-default">Buscar</button>
+			              </div>    
+			            </div> 
 	            	</div>
 	         	</fieldset>
-	         	<fieldset>
-	            	<div class="form-group">
-	               		<label for="input-id-1" class="col-sm-2 control-label">Titulo Nacional</label>
-	               		<div class="col-sm-10">
-	                  		<input id="input-id-1" class="form-control" type="text">
-	               		</div>
-	            	</div>
-	         	</fieldset>
-	         	<fieldset>
-	            	<div class="form-group">
-	               		<label for="input-id-1" class="col-sm-2 control-label">Ano</label>
-	               		<div class="col-sm-2">
-	                  		<input id="input-id-1" class="form-control" type="text">
-	               		</div>
-	               		<label for="input-id-1" class="col-sm-2 control-label">Número de Jogadores</label>
-	               		<label for="input-id-1" class="col-sm-1 control-label">de</label>
-	               		<div class="col-sm-1">
-	                  		<input id="input-id-1" class="form-control" type="text">
-	               		</div>
-	               		<label for="input-id-1" class="col-sm-1 control-label">a</label>
-	               		<div class="col-sm-1">
-	                  		<input id="input-id-1" class="form-control" type="text">
-	               		</div>
-	            	</div>
-	         	</fieldset>
-	         	<fieldset>
-	            	<div class="form-group">
-	               		<label for="input-id-1" class="col-sm-2 control-label">Duração Média</label>
-	               		<div class="col-sm-2">
-	                  		<input id="input-id-1" class="form-control" type="text"> (em minutos)
-	               		</div>
-	               		<label for="input-id-1" class="col-sm-2 control-label">Idade Mínima</label>
-	               		<div class="col-sm-2">
-	                  		<input id="input-id-1" class="form-control" type="text">
-	               		</div>
-	            	</div>
-	         	</fieldset>
-	         	<fieldset>
-	            	<div class="form-group">
-	               		<label for="input-id-1" class="col-sm-2 control-label">Descrição</label>
-	               		<div class="col-sm-10">
-	                  		<textarea rows="10" class="form-control note-editor"></textarea>
-	               		</div>
-	            	</div>
-	         	</fieldset>
-	         	<fieldset>
-	                <div class="form-group">
-	                   <div class="col-sm-4 col-sm-offset-2">
-	                      <button type="submit" class="btn btn-default">Cancelar</button>
-	                      <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-	                   </div>
-	                </div>
-             	</fieldset>
+
+	         	<div class="table-responsive">
+		          <table id="table-ext-1" class="table table-bordered table-hover">
+		             <tbody>
+		             	{{#each localizedGames }}
+			                <tr>
+			                	<td>{{ yearpublished }}</td>
+			                	<td>{{#with name }} {{ text }} {{/with }}</td>
+			                </tr>
+		                {{/each }}
+		             </tbody>
+		          </table>
+		        </div>
+
+	         	<div id="divFormGame">
+		         	<fieldset>
+		            	<div class="form-group">
+		               		<label for="input-id-1" class="col-sm-2 control-label">Ano</label>
+		               		<div class="col-sm-2">
+		                  		<input id="input-id-1" class="form-control" type="text">
+		               		</div>
+		               		<label for="input-id-1" class="col-sm-2 control-label">Número de Jogadores</label>
+		               		<label for="input-id-1" class="col-sm-1 control-label">de</label>
+		               		<div class="col-sm-1">
+		                  		<input id="input-id-1" class="form-control" type="text">
+		               		</div>
+		               		<label for="input-id-1" class="col-sm-1 control-label">a</label>
+		               		<div class="col-sm-1">
+		                  		<input id="input-id-1" class="form-control" type="text">
+		               		</div>
+		            	</div>
+		         	</fieldset>
+		         	<fieldset>
+		            	<div class="form-group">
+		               		<label for="input-id-1" class="col-sm-2 control-label">Duração Média</label>
+		               		<div class="col-sm-2">
+		                  		<input id="input-id-1" class="form-control" type="text"> (em minutos)
+		               		</div>
+		               		<label for="input-id-1" class="col-sm-2 control-label">Idade Mínima</label>
+		               		<div class="col-sm-2">
+		                  		<input id="input-id-1" class="form-control" type="text">
+		               		</div>
+		            	</div>
+		         	</fieldset>
+		         	<fieldset>
+		            	<div class="form-group">
+		               		<label for="input-id-1" class="col-sm-2 control-label">Descrição</label>
+		               		<div class="col-sm-10">
+		                  		<textarea rows="10" class="form-control note-editor"></textarea>
+		               		</div>
+		            	</div>
+		         	</fieldset>
+		         	<fieldset>
+		                <div class="form-group">
+		                   <div class="col-sm-4 col-sm-offset-2">
+		                      <button type="submit" class="btn btn-default">Cancelar</button>
+		                      <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+		                   </div>
+		                </div>
+	             	</fieldset>
+	            </div> 	
 	      	</form>
        </div>
     </div>

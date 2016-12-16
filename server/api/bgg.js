@@ -22,14 +22,18 @@ Meteor.methods({
     'bgg.search' (busca) {
         var xml = HTTP.call('GET', 'http://www.boardgamegeek.com/xmlapi/search?search=' + busca, options);
         obj = converteForJson(xml);
-        return obj.boardgames;
+        return obj.boardgames.boardgame;
     }
 });
 
 // Converte um schema xml para objeto json
 function converteForJson(xml) {
     var obj = null;
-    xml2js.parseString(xml.content, function (err, result) {
+    xml2js.parseString(xml.content, {
+        charkey: "text",
+        explicitArray: false
+    }, 
+    function (err, result) {
         obj = result;
     });
     return obj;
