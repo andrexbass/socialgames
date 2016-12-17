@@ -6,71 +6,52 @@
        	<div class="col-lg-12">
         	<div class="panel panel-default">
 		       	<div class="panel-body">
-			    	<form method="get" action="/" class="form-horizontal">
-			        	<fieldset>
-			            	<div class="form-group">
-			            		<div class="col-sm-12">
-			            			<em class="fa fa-wifi fa-2x"></em>
-			            			<p>Primeiro vamos procurar informações sobre o jogo na internet</p>
-			            		</div>	
-			               		<label for="input-id-1" class="col-sm-2 control-label">Procurar por</label>
-			               		<div class="col-sm-6">
-			                  		<input id="search" class="form-control" type="text">
-			               		</div>
-			               		<div class="col-sm-4">
-					              <div class="form-group">
-					                  <button type="button" id="btnSearchGame" class="btn btn-default">Buscar</button>
-					              </div>    
-					            </div> 
-			            	</div>
-			         	</fieldset>
-
-			         	<div class="table-responsive" id="tableListGames">
-				          <table id="table-ext-1" class="table table-bordered table-hover">
-				             <tbody>
-				             	{{#each localizedGames }}
-					                <tr>
-					                	<td class="col-sm-1">{{ yearpublished }}</td>
-					                	<td>
-						                	<div class="media">
-						                		<img src="https:{{ thumbnail }}" alt="Image" width="60">
-						                    </div>
-					                	</td>
-					                	<td>{{#with name }} {{ text }} {{/with }}</td>
-					                	<td><button type="button" game-id="{{#with generic }}{{ objectid }}{{/with}}" class="btn btn-primary moreInformation">Ver Informaçãoes</button></td>
-					                </tr>
-				                {{/each }}
-				             </tbody>
-				          </table>
-				        </div>
-
-			         	<div id="divFormGame">
-				         	<fieldset>
+		       		<div id="divSearchGame">
+		       			<form class="form-horizontal">
+				        	<fieldset>
 				            	<div class="form-group">
-				               		<label for="input-id-1" class="col-sm-2 control-label">Ano</label>
-				               		<div class="col-sm-2">
-				                  		<input id="input-id-1" class="form-control" type="text">
+				            		<div class="col-sm-12">
+				            			<em class="fa fa-wifi fa-2x"></em>
+				            			<p>Primeiro vamos procurar informações sobre o jogo na bgg</p>
+				            		</div>	
+				               		<label for="input-id-1" class="col-sm-2 control-label">Procurar por</label>
+				               		<div class="col-sm-6">
+				                  		<input id="search" class="form-control" type="text">
 				               		</div>
-				               		<label for="input-id-1" class="col-sm-2 control-label">Número de Jogadores</label>
-				               		<label for="input-id-1" class="col-sm-1 control-label">de</label>
-				               		<div class="col-sm-1">
-				                  		<input id="input-id-1" class="form-control" type="text">
-				               		</div>
-				               		<label for="input-id-1" class="col-sm-1 control-label">a</label>
-				               		<div class="col-sm-1">
-				                  		<input id="input-id-1" class="form-control" type="text">
-				               		</div>
+				               		<div class="col-sm-4">
+						              <div class="form-group">
+						                  <button type="button" id="btnSearchGame" class="btn btn-default">Buscar</button>
+						              </div>    
+						            </div> 
 				            	</div>
 				         	</fieldset>
-				         	<fieldset>
+				        </form>
+			        </div>
+		         	<div class="table-responsive" id="tableListGames">
+			          <table id="table-ext-1" class="table table-bordered table-hover">
+			             <tbody>
+			             	{{#each localizedGames }}
+				                <tr>
+				                	<td class="col-sm-1">{{ yearpublished }}</td>
+				                	<td>
+					                	<div class="media">
+					                		<img src="https:{{ thumbnail }}" alt="Image" width="60">
+					                    </div>
+				                	</td>
+				                	<td>{{#with name }} {{ text }} {{/with }}</td>
+				                	<td><button type="button" game-id="{{#with generic }}{{ objectid }}{{/with}}" class="btn btn-primary moreInformation">Ver Informaçãoes</button></td>
+				                </tr>
+			                {{/each }}
+			             </tbody>
+			          </table>
+			        </div>
+					<form method="get" action="/" class="form-horizontal" name="formGame">
+			         	<div id="divFormGame">
+			         		<fieldset>
 				            	<div class="form-group">
-				               		<label for="input-id-1" class="col-sm-2 control-label">Duração Média</label>
-				               		<div class="col-sm-2">
-				                  		<input id="input-id-1" class="form-control" type="text"> (em minutos)
-				               		</div>
-				               		<label for="input-id-1" class="col-sm-2 control-label">Idade Mínima</label>
-				               		<div class="col-sm-2">
-				                  		<input id="input-id-1" class="form-control" type="text">
+				               		<label for="input-id-1" class="col-sm-2 control-label">Titulo do Jogo</label>
+				               		<div class="col-sm-10">
+				                  		<input type="text" id="name" name="name" rows="10" class="form-control" />
 				               		</div>
 				            	</div>
 				         	</fieldset>
@@ -78,15 +59,23 @@
 				            	<div class="form-group">
 				               		<label for="input-id-1" class="col-sm-2 control-label">Descrição</label>
 				               		<div class="col-sm-10">
-				                  		<textarea rows="10" class="form-control note-editor"></textarea>
+				                  		<textarea id="description" name="description" rows="10" class="form-control note-editor"></textarea>
+				               		</div>
+				            	</div>
+				         	</fieldset>
+				         	<fieldset>
+				            	<div class="form-group">
+				               		<label for="input-id-1" class="col-sm-2 control-label">Componentes</label>
+				               		<div class="col-sm-10">
+				                  		<textarea id="components" name="components" rows="10" class="form-control note-editor"></textarea>
 				               		</div>
 				            	</div>
 				         	</fieldset>
 				         	<fieldset>
 				                <div class="form-group">
 				                   <div class="col-sm-4 col-sm-offset-2">
-				                      <button type="submit" class="btn btn-default">Cancelar</button>
-				                      <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+				                      <button type="button" id="btnCancelar" class="btn btn-default">Cancelar</button>
+				                      <button type="button" id="btnSalvar" class="btn btn-primary">Salvar Alterações</button>
 				                   </div>
 				                </div>
 			             	</fieldset>
@@ -123,7 +112,7 @@
 	       	</div>	
 	       	<div class="col-lg-4">
 	          	<h3 class="mt0">{{#with name}}{{ text }}{{/with}}</h3>
-	          	<button type="button" class="btn btn-primary pull-right">Quero cadastrar esse</button>
+	          	<button id="useGame" type="button" class="btn btn-primary pull-right">Quero cadastrar esse</button>
 	          	<p>Ano de Publicação: {{ yearpublished }}</p>
                 <p class="text-muted">{{ description }}</p>
 	        </div>
