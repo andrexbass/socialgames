@@ -20,9 +20,25 @@ Meteor.methods({
     },
     // Retorna uma lista de jogos por meio de uma busca textual no titulo do jogo
     'bgg.search' (busca) {
-        var xml = HTTP.call('GET', 'http://www.boardgamegeek.com/xmlapi/search?search=' + busca, options);
-        obj = converteForJson(xml);
-        return obj.boardgames.boardgame;
+        var xmlList = HTTP.call('GET', 'http://www.boardgamegeek.com/xmlapi/search?search=' + busca, options);
+        obj = converteForJson(xmlList);
+        gameList = obj.boardgames.boardgame;
+        var urlChamada = 'http://www.boardgamegeek.com/xmlapi/boardgame/';
+        for(var game in gameList) {
+            gameId = gameList[game].generic.objectid;
+            urlChamada += (gameId + ',');
+        }
+        xmlGame = HTTP.call('GET', urlChamada, options);
+        objGames = converteForJson(xmlGame).boardgames.boardgame;
+        for(var game in gameList) {
+            gameId = gameList[game].generic.objectid;
+            for(var objGame in objGames) {
+                if (objGames[objGame].generic.objectid == gameId) {
+                    gameList[game].thumbnail = objGames[objGame].thumbnail;
+                }
+            }
+        }
+        return gameList;
     }
 });
 

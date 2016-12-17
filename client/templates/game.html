@@ -33,9 +33,7 @@
 					                	<td class="col-sm-1">{{ yearpublished }}</td>
 					                	<td>
 						                	<div class="media">
-						                        {{#with generic}}
-						                		<img src="https://cf.geekdo-images.com/images/pic{{objectid}}_t.jpg" alt="Image" width="60">
-						                		{{/with}}
+						                		<img src="https:{{ thumbnail }}" alt="Image" width="60">
 						                    </div>
 					                	</td>
 					                	<td>{{#with name }} {{ text }} {{/with }}</td>
@@ -125,6 +123,7 @@
 	       	</div>	
 	       	<div class="col-lg-4">
 	          	<h3 class="mt0">{{#with name}}{{ text }}{{/with}}</h3>
+	          	<button type="button" class="btn btn-primary pull-right">Quero cadastrar esse</button>
 	          	<p>Ano de Publicação: {{ yearpublished }}</p>
                 <p class="text-muted">{{ description }}</p>
 	        </div>
