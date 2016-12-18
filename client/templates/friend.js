@@ -30,9 +30,8 @@ Template.friends.helpers({
 });
 
 Template.friends.events({
-
+    // Adiciona um amigo em sua lista de amigos
     'click #btnAddFriend' : function(event, template){
-
     	let friends = $('form[name="form-add-friend"]').serializeJSON();
     	Meteor.call('friends.add', friends, function(e, result){
         if (result == "friend-exist") {

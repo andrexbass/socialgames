@@ -4,9 +4,6 @@ import { ReactiveVar } from 'meteor/reactive-var'
 
 var bggGames = new ReactiveVar(0);
 var fGame = new ReactiveVar(0);
-bggGames.set([]);
-fGame.set([]);
-thumb = '';
 
 Template.games.rendered = function(){
     $("#divFormGame").hide();
@@ -17,7 +14,6 @@ Template.games.events({
     // Search games
     'click #btnSearchGame' : function(event, template){
       Meteor.call('bgg.search', $("#search").val(), function(e, result){
-        console.log(result);
         bggGames.set(result);
         $('#tableListGames').show();
         $('#divFocusGame').hide();
@@ -27,7 +23,6 @@ Template.games.events({
     'click .moreInformation' : function(event, template){
       var gameId = $(event.target).attr("game-id");
       Meteor.call('bgg.game', gameId, function(e, result){
-        console.log(result);
         fGame.set(result);
         $('#tableListGames').hide();
         $('#divFocusGame').show();
@@ -61,13 +56,13 @@ Template.games.events({
       game.thumbnail = bggGame.thumbnail;
       game.image = bggGame.image;
       Meteor.call('game.insert', game, function (e, result) {
-          if(result){
-              alert("Jogo salvo com sucesso");
-              $('#divSearchGame').show();
-              $("#divFormGame").hide();
-          } else {
-              alert("Erro ao tentar salvar um jogo");
-          }
+        if(result){
+            alert("Jogo salvo com sucesso");
+            $('#divSearchGame').show();
+            $("#divFormGame").hide();
+        } else {
+            alert("Erro ao tentar salvar um jogo");
+        }
       });
     }
 });
