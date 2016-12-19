@@ -3,8 +3,13 @@ import { Meteor } from 'meteor/meteor';
 import { ReactiveVar } from 'meteor/reactive-var'
 
 Meteor.subscribe('game.list');
+Meteor.subscribe('friends.list');
+
 var rGame = new ReactiveVar(0);
+var rMaxPlayers = new ReactiveVar(0);
+
 const Games = new Mongo.Collection('games');
+const Friends = new Mongo.Collection('friends');
 
 Template.matches.rendered = function(){
     $("#selectGame").select2({
@@ -12,7 +17,10 @@ Template.matches.rendered = function(){
     	maximumSelectionLength: 1,
       	allowClear: true
     });
+
     $('#viewGame').hide();
+    $('#divPlayers').hide();
+    $('#divButtons').hide();
 };
 
 Template.matches.helpers({
@@ -21,18 +29,34 @@ Template.matches.helpers({
 	},
 	game() {
 		return rGame.get();
-	}
+	},
+    maxplayers() {
+        return rMaxPlayers.get();
+    },
+    // Implementação do index manual a alocação de jogadores (descobrir como fazer automatico com blaze)
+    arrMaxPlayers() {
+        var arrMaxPlayers = [];
+        for (var i = 1; i <= rMaxPlayers.get(); i++) {
+            arrMaxPlayers.push({index: i});
+        }
+        console.log(arrMaxPlayers);
+        return arrMaxPlayers;
+    },
+    friends() {
+        return Friends.find({meu_id: Meteor.user()._id});
+    }
 });
 
 Template.matches.events({
     // Search games
     'change #selectGame' : function(event, template) {
       	game = Games.findOne({bggid: $("#selectGame").val()[0]});
-      	console.log(game);
-		rGame.set(game);	
+		rGame.set(game);
+        rMaxPlayers.set(game.maxplayers);
+        $('#divButtons').show();
     },
-    'click #btnNewGame' : function(event, template) {
-    	location.href = "/games";
+    'click #btnMatchNow' : function(event, template) {
+        $('#divButtons').hide();
+        $('#divPlayers').show();
     }
 });
-
