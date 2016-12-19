@@ -4,8 +4,6 @@ import { Meteor } from 'meteor/meteor';
 Meteor.subscribe('friends.listEmails');
 Meteor.subscribe('friends.list');
 
-const Friends = new Mongo.Collection('friends');
-
 Template.friends.rendered = function(){
     $("#amigos").select2({
     	placeholder: "digite o email do seu amigo",
