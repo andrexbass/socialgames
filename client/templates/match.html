@@ -6,22 +6,59 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <form role="form" name="form-add-friend" class="form-horizontal">
-            <div class="col-sm-8">
+            <fieldset>
               <div class="form-group">
-                <select name="game" multiple="" id="game" class="form-control m-b">
-                  {{#each games}}
-                    <option value='{{ bggid }}'>{{ name }}</option>
-                  {{/each}}
-                </select>
+                <div class="col-sm-12">
+                  <label for="amigos" class="col-sm-2 control-label">Escolha o jogo</label> 
+                  <div class="col-sm-6">
+                    <select name="selectGame" multiple="" id="selectGame" class="form-control m-b">
+                      {{#each games}}
+                        <option value='{{ bggid }}'>{{ name }}</option>
+                      {{/each}}
+                    </select>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="form-group">
-                  <button type="button" id="btnAddFriend" class="btn btn-default">Escolher</button>
-              </div>    
-            </div>   
+            </fieldset>
+            <div>Não encontrou seu jogo? cadastre agora, é super rápido. <button type="button" id="btnNewGame" class="btn btn-success">Cadastrar novo jogo</button></div>
           </form>
+      </div>
+    </div>
+
+    {{#with game}}
+    <div class="col-lg-6" id="viewGame">
+      <div class="panel widget">
+        <div class="panel-body bg-inverse">
+          <div class="row text-center">
+            <div class="col-xs-6">
+              <img src="{{ thumbnail }}"/>
+            </div>
+            <div class="col-xs-6">
+              <h4 class="m0">{{ name }}</h4>
+              <p class="m0 text-muted">
+                 <small>Ano: {{ yearpublished }}</small>
+              </p>
+              <button type="button" id="btnNewGame" class="btn btn-default">Vou jogar agora</button>
+              <br/>ou<br/>
+              <button type="button" id="btnNewGame" class="btn btn-default">Agendar partida</button>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row row-table text-center">
+            <div class="col-xs-6">
+              <p class="m0 text-muted">Tempo médio</p>
+              <h4 class="m0"><em class="fa fa-clock-o"></em> {{ playingtime }} min</h4>
+            </div>
+            <div class="col-xs-6">
+              <p class="m0 text-muted">Jogadores</p>
+              <h4 class="m0"><em class="fa fa-group"></em> {{ minplayers }} - {{ maxplayers }}</h4>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    {{/with}}
+
+  </div>  
 </template>

@@ -9,6 +9,8 @@ const Friends = new Mongo.Collection('friends');
 Template.friends.rendered = function(){
     $("#amigos").select2({
     	placeholder: "digite o email do seu amigo",
+      maximumSelectionLength: 1,
+      allowClear: true
     });
 };
 

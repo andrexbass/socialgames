@@ -4,26 +4,31 @@
     </h3>
     <div class="row">
       <div class="panel panel-default">
-          <div class="panel-body">
+        <div class="panel-body">
           <form role="form" name="form-add-friend" class="form-horizontal">
-              <div class="col-sm-8">
-                <div class="form-group">  
-                  <select name="users_id" multiple="" id="amigos" class="form-control m-b">
-                    {{#each allUsers}}
-                      <option value='{{ _id }}'>{{ emailDoAmigo }}</option>
-                    {{/each}}
-                  </select>
-              </div>
-            </div>
-            <div class="col-sm-4">
+            <fieldset>
               <div class="form-group">
-                  <button type="button" id="btnAddFriend" class="btn btn-default">Adicionar</button>
-              </div>    
-            </div>   
+                <div class="col-sm-12">
+                  <label for="amigos" class="col-sm-2 control-label">Procurar Amigo</label> 
+                  <div class="col-sm-6">
+                    <select name="amigos" id="amigos" class="form-control m-b" multiple="">
+                      {{#each allUsers}}
+                        <option value='{{ _id }}'>{{ emailDoAmigo }}</option>
+                      {{/each}}
+                    </select>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <button type="button" id="btnAddFriend" class="btn btn-default">Adicionar</button>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+            </fieldset>
           </form>
-       </div>
-    </div>
-    {{#each amigos}}
+        </div>
+      </div>
+      {{#each amigos}}
       <div class="col-lg-3 col-md-4">
           <div class="panel b text-center">
              <div class="panel-body">
@@ -50,6 +55,6 @@
              </div>
           </div>
       </div>
-    {{/each}}
+      {{/each}}
   </div>
 </template>
