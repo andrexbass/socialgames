@@ -3,6 +3,7 @@
 **GERAL:**
 
 * Login através do Facebook
+* Login através do E-mail
 
 **AMIGOS:**
 
