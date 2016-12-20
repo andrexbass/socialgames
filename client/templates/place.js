@@ -1,6 +1,9 @@
 import { Template } from 'meteor/templating';
-import { Meteor } from 'meteor/meteor'
+import { Meteor } from 'meteor/meteor';
+import { ReactiveVar } from 'meteor/reactive-var'
 import './place.html';
+
+var lista = new ReactiveVar(0);
 
 Template.places.events({
 
@@ -17,20 +20,16 @@ Template.places.events({
         });
 
         Meteor.call('places.find', null, function (e, result) {
-            if(result){
-               // console.log( result);
-            } else {
-                alert("off");
-            }
+            lista.set(result);
         });
     }
 });
 
-
 Template.places.helpers({
-  lista: [
-    { name: 'This is task 1' },
-    { name: 'This is task 2' },
-    { name: 'This is task 3' },
-  ],
-});
+  lista() {
+    Meteor.call('places.find', null, function (e, result) {
+        lista.set(result);
+    });
+    return lista.get();
+  }
+})

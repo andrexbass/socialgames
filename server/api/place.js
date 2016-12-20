@@ -1,16 +1,18 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
-export const Place = new Mongo.Collection('place');
+export const Places = new Mongo.Collection('places');
 
 Meteor.methods({
-	'place.insert'(place){
-		place['createdAt'] = new Date();
-		Place.insert(place);
+	'places.insert'(place){
+		Places.insert(place);
 		return true;
 	},
-	'place.find'(){
-		return Place.find({}).fetch();
+	'places.find'(){
+		return Places.find().fetch();
 	}
 });
 
+Meteor.publish('places.list', function(){
+	return Places.find();
+});
