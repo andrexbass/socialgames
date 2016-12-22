@@ -54,6 +54,8 @@
 * Permitir usuário exportar suas partidas do BGG
 * Permitir usuário importar suas partidas para o BGG
 * Gerar feed para a timeline ao cadastrar uma partida (João adicionou uma nova partida de Zombicide no ACDC com Thiago e André)
+* Publicar resultado da partida no facebook
+* Opção de convidar um amigo para uma partida agendada
 
 **LOCAIS:**
 
